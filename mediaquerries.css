@@ -1,0 +1,35 @@
+@media screen and (max-width: 800px) {
+  #title-right {
+    grid-column: auto / span 2;
+  }
+  #portrait {
+    flex-wrap: wrap;
+  }
+  #portrait {
+    padding: 1rem 2rem;
+    gap: 1rem;
+  }
+  .portrait-text {
+    width: 85%;
+  }
+
+  .portrait-image img {
+    width: 100%;
+  }
+  .logo {
+    width: 70vw;
+  }
+
+  .animate-slidein {
+    animation: 4s slide-in 1 normal;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(110%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
