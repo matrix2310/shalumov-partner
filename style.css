@@ -183,7 +183,7 @@ h3 {
 }
 
 .portrait-image {
-  width: min(100%, 600px); /* Adjust the size logic */
+  width: min(100%, 500px); /* Adjust the size logic */
   overflow: hidden; /* Ensure no extra space */
 }
 
