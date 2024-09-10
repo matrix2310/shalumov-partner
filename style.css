@@ -58,16 +58,29 @@ ul {
 }
 
 .logo {
-  width: 40vw;
   font-family: quicksand, sans-serif;
   font-size: 26px;
   font-weight: lighter;
   border: none;
   padding-left: 1rem;
+  text-align: center; /* Center the logo */
 }
 
 .logo img {
-  width: 100%;
+  max-width: 100%; /* Ensures the image scales down if necessary */
+  height: auto; /* Keeps the aspect ratio */
+}
+
+@media (min-width: 600px) {
+  .logo img {
+    max-width: 500px; /* Adjust this value to control the maximum size */
+  }
+}
+
+@media (min-width: 900px) {
+  .logo img {
+    max-width: 500px; /* Adjust this value for larger screens */
+  }
 }
 
 ul > li {
@@ -156,20 +169,26 @@ img + button:hover,
   flex-wrap: wrap;
 }
 
-h2,
-h3 {
-  font-weight: 300;
-  margin-bottom: 1rem;
-  font-family: 'Heiti SC', sans-serif;
-}
-
 .card {
-  color: var(--dark-blue);
-  width: 300px;
+  flex: 1 1 calc(33.333% - 2rem); /* Adjust to fit three cards per row with space in between */
+  max-width: 350px; /* Adjust the maximum width of each card */
   padding: 2rem;
   background-color: var(--beige-background);
   background-color: var(--light-beige-background);
+  box-sizing: border-box; /* Ensure padding and borders are included in the element's total width and height */
 }
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark-blue); /* Apply the red shade */
+}
+
+.card p {
+  font-size: 1rem;
+  color: var(--dark-blue); /* Apply the same red shade */
+}
+
 
 /* portrait */
 
@@ -183,13 +202,15 @@ h3 {
 }
 
 .portrait-image {
-  width: min(100%, 500px); /* Adjust the size logic */
-  overflow: hidden; /* Ensure no extra space */
+  width: 100%; /* Allows the container to take up the full width */
+  max-width: 500px; /* Sets a maximum width to prevent it from getting too large */
+  overflow: hidden; /* Ensures no extra space */
 }
 
 .portrait-image img {
-  width: 100%;
-  object-fit: fill;
+  width: 100%; /* Makes sure the image fills the container */
+  height: auto; /* Keeps the aspect ratio */
+  object-fit: cover; /* Ensures the image covers the container without distortion */
 }
 
 .portrait-text {
@@ -197,6 +218,8 @@ h3 {
   color: whitesmoke;
   padding: 4rem 2rem 2rem;
   width: min(600px, 40%); /* Corrected duplicate width settings */
+  height: min(600px, 100%);
+
 }
 
 .portrait-text button {

@@ -10,15 +10,27 @@
     gap: 1rem;
   }
   .portrait-text {
-    width: 85%;
+    width: 75%;
   }
 
-  .portrait-image img {
-    width: 100%;
+  @media (max-width: 500px) {
+    .portrait-image {
+      max-width: 300px; /* Adjusts the max-width for smaller screens */
+    }
   }
-  .logo {
-    width: 70vw;
+  
+  @media (min-width: 500px) and (max-width: 900px) {
+    .portrait-image {
+      max-width: 400px; /* Adjusts the max-width for medium screens */
+    }
   }
+  
+  @media (min-width: 900px) {
+    .portrait-image {
+      max-width: 500px; /* Adjusts the max-width for larger screens */
+    }
+  }
+  
 
   .animate-slidein {
     animation: 4s slide-in 1 normal;
@@ -31,5 +43,26 @@
   }
   to {
     transform: translateY(0%);
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    flex: 1 1 100%; /* Full width on smaller screens */
+    max-width: 100%; /* Ensure card can expand to full width */
+  }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .card {
+    flex: 1 1 calc(50% - 2rem); /* Two cards per row on medium screens */
+    max-width: 100%; /* Ensure card can expand to fit the container */
+  }
+}
+
+@media (min-width: 900px) {
+  .card {
+    flex: 1 1 calc(33.333% - 2rem); /* Three cards per row on larger screens */
+    max-width: 350px; /* Adjust as needed to match image size */
   }
 }
